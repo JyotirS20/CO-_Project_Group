@@ -67,7 +67,7 @@ temp=[]
 temp = sys.stdin.read().splitlines()
 #print(lines)
 for i in range(len(temp)):
-	if(temp[i]==''):
+	if(temp[i]=='' or temp[i].isspace()==True):
 		pass
 	else:
 		lines.append(temp[i])
