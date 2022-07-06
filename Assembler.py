@@ -1,6 +1,7 @@
 import sys
 import os
 import site
+
 instructions_dict={"add":"10000","sub":"10001","mov":"10010","ld":"10100","st":"10101","mul":"10110","div":"10111","rs":"11000","ls":"11001","xor":"11010","or":"11011","and":"11100","not":"11101","cmp":"11110","jmp":"11111","jlt":"01100","jgt":"01101","je":"01111","hlt":"01010"}
 instructions=["add","sub","mov","ld","st","mul","div","rs","ls","xor","or","and","not","cmp","jmp","jlt","jgt","je","hlt","var"]
 register_dict={"R0":"000","R1":"001","R2":"010","R3":"011","R4":"100","R5":"101","R6":"110"}
@@ -55,14 +56,24 @@ def binary_int(n):
         out+=str(temp%2)
         temp=temp//2
     return out[::-1]
-
 lines = [] #for taking input
-while True:
-    line = input()
-    if line:
-        lines.append(line)
-    else:
-        break
+temp=[]
+# while True:
+    # line = input()
+    # if line:
+    #     lines.append(line)
+    # else:
+    #     break
+temp = sys.stdin.read().splitlines()
+#print(lines)
+for i in range(len(temp)):
+	if(temp[i]==''):
+		pass
+	else:
+		lines.append(temp[i])
+#print(lines)
+		
+
 
 text = '\n'.join(lines)
 #print(text)
@@ -396,3 +407,4 @@ elif(len(error_dict)==0):
 else:
     for i in sorted(error_dict.keys()):
         print(error_dict[i])
+        
