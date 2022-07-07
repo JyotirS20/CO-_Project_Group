@@ -80,7 +80,12 @@ text = '\n'.join(lines)
 #print(type(text))
 
 input_list=text.split("\n")
-halt_index=input_list.index("hlt")
+
+for i in range(len(input_list)):
+    if "hlt" in input_list[i]:
+        halt_index = i
+        found_halt=1 #if halt is found, set found_halt=1
+        break
 
 flag_length=0
 
@@ -257,7 +262,6 @@ def find(inst):
 line_number=0 #for counting the line number
 count_instructios=0 #for counting the line number
 not_var=0 #for checking if instruction is not a variable declaration
-found_halt=0 #if halt is found, set found_halt=1
 
 if flag_length==0:
     for i in input_list:
