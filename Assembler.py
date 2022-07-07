@@ -201,7 +201,7 @@ def opcode_C(list_input,line_number):
         error_dict[line_number]="Register not defined; line "+str(line_number)
         global_error_flag=1
         return
-    return instructions_dict_C[list_input[0]] + "00000" + register_dict[list_input[1]] + register_dict_FLAGS[list_input[2]]
+    return instructions_dict_C[list_input[0]] + "00000" + register_dict_FLAGS[list_input[1]] + register_dict[list_input[2]]
 
 def opcode_D(list_input,line_number):
     if(list_input[1] not in register_dict):
