@@ -81,9 +81,11 @@ text = '\n'.join(lines)
 
 input_list=text.split("\n")
 
-for i in range(len(input_list)):
-    if "hlt" in input_list[i]:
-        halt_index = i
+halt_index=0
+found_halt=0
+for j in range(len(input_list)):
+    if "hlt" in input_list[j]:
+        halt_index = j
         found_halt=1 #if halt is found, set found_halt=1
         break
 
